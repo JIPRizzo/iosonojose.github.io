@@ -145,9 +145,16 @@ a {
   color: var(--accent-soft);
 }
 
+.cursor {
+  margin-left: 4px;
+animation: blink 1s infinite;
+}
+
 @keyframes blink {
-  0%, 50%, 100% { opacity: 1; }
-  25%, 75% { opacity: 0; }
+  0%   { opacity: 1; }
+  50%  { opacity: 0; }
+  100% { opacity: 1; }
+  }
 }
 
 .hero-actions {
