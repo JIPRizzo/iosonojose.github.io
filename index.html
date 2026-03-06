@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>José Rizzo</title>
+  <meta
+    name="description"
+    content="Storytelling."
+    />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="64x64" href="/favicon-64.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a href="#top" class="brand">
+        <img src="images/jr-mark.png" alt="JR mark" class="brand-mark" />
+        <span>José Rizzo</span>
+      </a>
+
+      <nav class="nav-links">
+        <a href="#film">Film</a>
+        <a href="#writing">Writing</a>
+        <a href="#about">About</a>
+        <a href="#connect">Connect</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">Storytelling.</p>
+          <h1>I explore identity, adaptation and belonging.</h1>
+          <p class="hero-text">
+            This is my corner of the internet. A home for films, writing, and
+            experiments shaped by movement across cultures, fatherhood, and
+            creative work done in public.
+          </p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#film">Watch the latest film</a>
+            <a class="button button-secondary" href="#writing">Read the writing</a>
+          </div>
+        </div>
+
+        <div class="hero-card">
+          <img src="images/jr-mark.png" alt="JR mark" class="hero-mark" />
+        </div>
+      </div>
+    </section>
+
+    <section id="film" class="section">
+      <div class="container">
+        <div class="section-head">
+          <p class="section-label">Latest film</p>
+          <h2>Recent work on YouTube</h2>
+        </div>
+
+        <div class="video-frame">
+          <iframe
+            src="https://www.youtube.com/embed/YOUR_VIDEO_ID"
+            title="Latest film by José Rizzo"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen
+          ></iframe>
+        </div>
+
+        <p class="section-note">
+          Replace <code>YOUR_VIDEO_ID</code> once we have the final video link.
+        </p>
+      </div>
+    </section>
+
+    <section id="writing" class="section section-alt">
+      <div class="container">
+        <div class="section-head">
+          <p class="section-label">Latest writing</p>
+          <h2>Cultural Contraband</h2>
+        </div>
+
+        <div class="cards">
+          <article class="card">
+            <h3>Read on Substack</h3>
+            <p>
+              Essays and reflections on identity, adaptation, fatherhood, and
+              creative work in public.
+            </p>
+            <a class="text-link" href="YOUR_SUBSTACK_URL" target="_blank" rel="noopener noreferrer">
+              Visit the publication
+            </a>
+          </article>
+
+          <article class="card">
+            <h3>Subscribe</h3>
+            <p>
+              Start with Substack for V1. Keep the system simple before adding
+              separate email capture.
+            </p>
+            <a class="text-link" href="YOUR_SUBSTACK_URL" target="_blank" rel="noopener noreferrer">
+              Subscribe on Substack
+            </a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="section">
+      <div class="container narrow">
+        <div class="section-head">
+          <p class="section-label">About</p>
+          <h2>A short introduction</h2>
+        </div>
+
+        <p>
+          I’m José Rizzo, a filmmaker and writer building a body of work around
+          culture, identity, and agency.
+        </p>
+
+        <p>
+          Through film, essays, and visual experiments, I explore what it means
+          to make meaning across places, languages, and seasons of life.
+        </p>
+
+        <p>
+          This site is version one: simple, clear, and alive.
+        </p>
+      </div>
+    </section>
+
+    <section id="connect" class="section section-alt">
+      <div class="container">
+        <div class="section-head">
+          <p class="section-label">Connect</p>
+          <h2>Find me here</h2>
+        </div>
+
+        <div class="cards">
+          <article class="card">
+            <h3>YouTube</h3>
+            <p>Films, short visual stories, and creative experiments.</p>
+            <a class="text-link" href="YOUR_YOUTUBE_CHANNEL_URL" target="_blank" rel="noopener noreferrer">
+              Visit channel
+            </a>
+          </article>
+
+          <article class="card">
+            <h3>Substack</h3>
+            <p>Longer reflections and essays from Cultural Contraband.</p>
+            <a class="text-link" href="YOUR_SUBSTACK_URL" target="_blank" rel="noopener noreferrer">
+              Read and subscribe
+            </a>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+
+      <p>© <span id="year"></span> José Rizzo</p>
+      <p class="millstreet">
+      Made with kærlighed on Millstreet
+      </p>
+      
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
