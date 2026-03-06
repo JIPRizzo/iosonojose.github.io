@@ -118,6 +118,13 @@ a {
   color: var(--muted);
 }
 
+.film-title {
+  margin-top: 8px;
+  margin-bottom: 6px;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
 .hero h1 {
   margin: 0 0 1rem;
   font-size: clamp(2.4rem, 5vw, 5rem);
@@ -133,11 +140,26 @@ a {
   font-size: 1.08rem;
 }
 
+#welcome-word {
+  font-weight: 600;
+  color: var(--accent-soft);
+}
+
+@keyframes blink {
+  0%, 50%, 100% { opacity: 1; }
+  25%, 75% { opacity: 0; }
+}
+
 .hero-actions {
   display: flex;
   flex-wrap: wrap;
   gap: 0.9rem;
   margin-top: 1.5rem;
+}
+
+.hero-line {
+  display: block;
+  margin-top: 0.35em;
 }
 
 .button {
