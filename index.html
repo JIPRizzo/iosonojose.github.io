@@ -55,25 +55,26 @@
       </div>
     </section>
 
-    <section id="video" class="section">
-      <div class="container">
+  <section id="video" class="section">
+  <div class="container">
+    <div class="section-head">
+      <p class="section-label">Video.</p>
+      <h2>LATEST RELEASE</h2>
+      <h3 class="video-title" id="latest-video-title">Loading latest video…</h3>
+    </div>
 
-        <div class="section-head">
-  <p class="section-label">Video.</p>
-  <h2>LATEST RELEASE</h2>
-  <h3 class="video-title">Wish I Was Indifferent... But I Care</h3>
-</div>
-
-<div class="video-frame">
-  <iframe
-    src="https://www.youtube.com/embed/VIDEO_ID"
-    title="Wish I Was Indifferent... But I Care"
-    frameborder="0"
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-    allowfullscreen
-  ></iframe>
-</div>
-    </section>
+    <div class="video-frame">
+      <iframe
+        id="latest-video-iframe"
+        src=""
+        title="Latest YouTube video"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen
+      ></iframe>
+    </div>
+  </div>
+</section>
 
     <section id="writing" class="section section-alt">
       <div class="container">
@@ -218,34 +219,31 @@ function typeEffect() {
 }
 
 typeEffect();
-/*---Latest YouTube Video and Video Title is below:
-const feed = "https://www.youtube.com/feeds/videos.xml?channel_id=UCtz02LPrgAZBwJQ9ASzAqEw";
-const api = "https://api.allorigins.win/get?url=" + encodeURIComponent(feed);
+/*---Latest YouTube Video and Video Title---*/
+async function loadLatestVideo() {
 
-fetch(api)
-  .then(res => res.json())
-  .then(data => {
-    const parser = new DOMParser();
-    const xml = parser.parseFromString(data.contents, "text/xml");
+  const endpoint = "https://primus.jiprizzo.workers.dev";
 
-    const entry = xml.querySelector("entry");
-    const title = entry.querySelector("title").textContent;
-    const videoId = entry.querySelector("yt\\:videoId").textContent;
+  const titleEl = document.getElementById("latest-video-title");
+  const iframeEl = document.getElementById("latest-video-iframe");
 
-    document.getElementById("latest-video-title").textContent = title;
+  try {
 
-    document.getElementById("latest-video").innerHTML =
-      `<iframe 
-        src="https://www.youtube.com/embed/${videoId}"
-        frameborder="0"
-        allowfullscreen>
-      </iframe>`;
-  })
-  .catch(() => {
-    document.getElementById("latest-video-title").textContent = "Watch the latest on YouTube";
-  });
-  but it didn't work. Broswer CORS + 3rd party proxy reliability issue---*/
+    const res = await fetch(endpoint);
+    const data = await res.json();
 
+    titleEl.textContent = data.title;
+    iframeEl.src = `${data.embedUrl}?rel=0`;
+
+  } catch (error) {
+
+    console.error("Failed to load latest video:", error);
+    titleEl.textContent = "Latest video unavailable";
+
+  }
+}
+
+loadLatestVideo();
 </script>
 </body>
 </html>
