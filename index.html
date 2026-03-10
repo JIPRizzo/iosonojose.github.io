@@ -59,13 +59,20 @@
       <div class="container">
 
         <div class="section-head">
-          <p class="section-label">Video.</p>
-          <h2>LATEST RELEASE</h2>
-          <h3 id="latest-video-title" class="video-title">Loading...</h3>
-        </div>
-          <div id="latest-video" class="video-frame"></div>
+  <p class="section-label">Video.</p>
+  <h2>LATEST RELEASE</h2>
+  <h3 class="video-title">Wish I Was Indifferent... But I Care</h3>
+</div>
 
-      </div>
+<div class="video-frame">
+  <iframe
+    src="https://www.youtube.com/embed/VIDEO_ID"
+    title="Wish I Was Indifferent... But I Care"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    allowfullscreen
+  ></iframe>
+</div>
     </section>
 
     <section id="writing" class="section section-alt">
@@ -211,7 +218,7 @@ function typeEffect() {
 }
 
 typeEffect();
-/*---Latest YouTube Video and Video Title---*/
+/*---Latest YouTube Video and Video Title is below:
 const feed = "https://www.youtube.com/feeds/videos.xml?channel_id=UCtz02LPrgAZBwJQ9ASzAqEw";
 const api = "https://api.allorigins.win/get?url=" + encodeURIComponent(feed);
 
@@ -237,6 +244,7 @@ fetch(api)
   .catch(() => {
     document.getElementById("latest-video-title").textContent = "Watch the latest on YouTube";
   });
+  but it didn't work. Broswer CORS + 3rd party proxy reliability issue---*/
 
 </script>
 </body>
