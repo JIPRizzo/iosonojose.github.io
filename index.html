@@ -63,15 +63,7 @@
           <h3 class="film-title">Do It Scared</h3>
         </div>
 
-        <div class="video-frame">
-          <iframe
-            src="https://www.youtube.com/embed/bh2aE50USSA"
-            title="Do It Scared"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen
-          ></iframe>
-        </div>
+        <div class="video-frame" id="latest-video"></div>
 
         <p class="section-note">
           Bravery and courage are often used synonymously. Related, but not quite the same. I'll take courage over bravery. Even if it means doing the thing... scared. 
@@ -175,7 +167,9 @@
   </footer>
 
   <script>
+    /*---Footer Year---*/
     document.getElementById("year").textContent = new Date().getFullYear();
+    /*---Welcome Typing Animation---*/
     const words = [
   "Welcome",
   "Bienvenido",
@@ -220,6 +214,41 @@ function typeEffect() {
 }
 
 typeEffect();
+/*---Latest YouTube Video---*/
+const channelRSS =
+"https://api.rss2json.com/v1/api.json?rss_url=https://www.youtube.com/feeds/videos.xml?channel_id=UCtzO2LPrgAZBWJQ9ASzAqEw";
+
+async function loadLatestVideo() {
+
+  try {
+
+    const response = await fetch(channelRSS);
+    const data = await response.json();
+
+    const latestVideo = data.items[0];
+    const videoId = latestVideo.link.split("v=")[1];
+
+    const container = document.getElementById("latest-video");
+
+    container.innerHTML = `
+      <iframe
+        src="https://www.youtube.com/embed/${videoId}"
+        title="${latestVideo.title}"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen>
+      </iframe>
+    `;
+
+  } catch (error) {
+
+    console.error("Failed to load latest YouTube video:", error);
+
+  }
+
+}
+
+loadLatestVideo();
   </script>
 </body>
 </html>
