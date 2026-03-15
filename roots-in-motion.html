@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Me in 10 minutes — José Rizzo</title>
+  <meta
+    name="description"
+    content="A deeper introduction to José Rizzo."
+  />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="64x64" href="/favicon-64.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a href="index.html" class="brand">
+        <img src="images/jr-mark.png" alt="JR mark" class="brand-mark" />
+        <span>José Rizzo</span>
+      </a>
+
+      <nav class="nav-links">
+        <a href="index.html#video">Video</a>
+        <a href="index.html#writing">Writing</a>
+        <a href="index.html#about">About</a>
+        <a href="index.html#connect">Connect</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="section">
+      <div class="container narrow">
+        <div class="section-head">
+          <p class="section-label">About</p>
+          <h1 class="page-title">Me in 10 minutes</h1>
+        </div>
+
+        <p class="page-intro">
+            I’m building this. In public. One piece at a time. 
+        </p>
+
+        <p>
+          This page will hold the longer version: more roots, more movement, more
+          context, more contradiction.
+        </p>
+
+        <p>
+          For now, the short version on the homepage is enough. Thanks for stopping by. 
+        </p>
+
+        <p class="easter-egg">
+          Patience, Iago, patience.
+        </p>
+
+        <p class="about-forward">
+          <a class="text-link" href="index.html#about">← Back to Me in 10 seconds</a>
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> José Rizzo</p>
+      <p class="millstreet">
+        Made with kærlighed on Millstreet.
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

@@ -145,6 +145,17 @@ a {
   color: var(--accent-soft);
 }
 
+.about-forward {
+  margin-top: 1.5rem;
+}
+
+.about-note {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  color: var(--muted);
+  opacity: 0.8;
+}
+
 .cursor {
   margin-left: 4px;
 animation: blink 1s infinite;
@@ -227,6 +238,27 @@ animation: blink 1s infinite;
   margin: 0;
   font-size: clamp(1.8rem, 3vw, 3rem);
   letter-spacing: -0.03em;
+}
+
+.page-title {
+  margin: 0;
+  font-size: clamp(2.2rem, 5vw, 4.25rem);
+  line-height: 0.95;
+  letter-spacing: -0.045em;
+}
+
+.page-intro {
+  margin-top: 1.5rem;
+  font-size: 1.15rem;
+  color: var(--text);
+}
+
+.easter-egg {
+  margin-top: 2rem;
+  font-size: 0.95rem;
+  color: var(--muted);
+  font-style: italic;
+  opacity: 0.85;
 }
 
 .video-frame {
