@@ -328,9 +328,177 @@ code {
   font-size: 0.92em;
 }
 
+/* Expedition page */
+.expedition-hero {
+  padding: 5rem 0 4rem;
+}
+
+.expedition-hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(280px, 0.65fr);
+  gap: 2rem;
+  align-items: center;
+}
+
+.expedition-title {
+  margin: 0;
+  max-width: 12ch;
+  font-size: clamp(3rem, 7vw, 6.75rem);
+  line-height: 0.92;
+  letter-spacing: -0.055em;
+}
+
+.expedition-title span {
+  color: var(--accent-soft);
+}
+
+.expedition-lead {
+  max-width: 58ch;
+  margin: 1.5rem 0 0;
+  color: var(--muted);
+  font-size: clamp(1.08rem, 2vw, 1.3rem);
+}
+
+.expedition-route-card {
+  padding: 1.6rem;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.expedition-route {
+  margin: 0;
+  font-size: clamp(2.25rem, 5vw, 4rem);
+  font-weight: 750;
+  letter-spacing: -0.05em;
+}
+
+.expedition-route span {
+  color: var(--accent-soft);
+}
+
+.expedition-route-note {
+  margin-bottom: 0;
+}
+
+.expedition-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1.25rem;
+}
+
+.expedition-pills span {
+  padding: 0.45rem 0.75rem;
+  color: var(--muted);
+  background: var(--bg-alt);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  font-size: 0.86rem;
+}
+
+.expedition-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.expedition-grid .card,
+.expedition-feature-card {
+  height: 100%;
+}
+
+.expedition-question {
+  margin: 1.5rem 0;
+  color: var(--text) !important;
+  font-size: clamp(1.45rem, 3vw, 2.2rem);
+  line-height: 1.25;
+  letter-spacing: -0.025em;
+}
+
+.expedition-card-icon {
+  margin: 0 0 0.75rem;
+  color: var(--text) !important;
+  font-size: 1.8rem;
+}
+
+.expedition-follow-grid,
+.expedition-support-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  align-items: stretch;
+  margin-top: 1.5rem;
+}
+
+.expedition-feature-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.expedition-feature-card .button {
+  margin-top: auto;
+}
+
+.button-disabled {
+  color: var(--muted);
+  cursor: not-allowed;
+  opacity: 0.72;
+}
+
+.button-disabled:hover {
+  transform: none;
+}
+
+.expedition-support-section {
+  color: #ffffff;
+  background: var(--accent);
+}
+
+.expedition-support-section .section-label,
+.expedition-support-section p {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.expedition-support-section h2 {
+  margin: 0;
+  font-size: clamp(2rem, 4vw, 3.75rem);
+  letter-spacing: -0.04em;
+}
+
+.expedition-support-section .button-primary {
+  color: var(--text);
+  background: #ffffff;
+}
+
+.expedition-support-grid {
+  align-items: center;
+  margin-top: 0;
+}
+
+.expedition-support-image {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: var(--radius);
+}
+
+.expedition-legal {
+  max-width: 56ch;
+  margin: 0.25rem 0 0;
+  font-size: 0.82rem;
+}
+
 @media (max-width: 860px) {
   .hero-grid,
-  .cards {
+  .cards,
+  .expedition-hero-grid,
+  .expedition-grid,
+  .expedition-follow-grid,
+  .expedition-support-grid {
     grid-template-columns: 1fr;
   }
 
@@ -350,5 +518,13 @@ code {
 
   .nav-links {
     gap: 0.8rem;
+  }
+
+  .expedition-hero {
+    padding-top: 3.5rem;
+  }
+
+  .expedition-route-card {
+    order: 2;
   }
 }
