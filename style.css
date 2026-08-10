@@ -454,36 +454,55 @@ code {
 }
 
 .expedition-support-section {
+  background: var(--bg-alt);
+}
+
+.expedition-support-visual {
+  position: relative;
+  overflow: hidden;
+  min-height: 560px;
+  aspect-ratio: 4 / 3;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.expedition-support-visual::after {
+  position: absolute;
+  inset: 0;
+  content: "";
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0.72) 0%, rgba(0, 0, 0, 0.38) 42%, rgba(0, 0, 0, 0) 72%);
+}
+
+.expedition-support-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 18%;
+}
+
+.expedition-support-copy {
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  left: clamp(1.5rem, 5vw, 4rem);
+  width: min(31rem, calc(100% - 3rem));
   color: #ffffff;
-  background: var(--accent);
+  transform: translateY(-50%);
 }
 
-.expedition-support-section .section-label,
-.expedition-support-section p {
-  color: rgba(255, 255, 255, 0.75);
+.expedition-support-copy .section-label,
+.expedition-support-copy p {
+  color: rgba(255, 255, 255, 0.84);
 }
 
-.expedition-support-section h2 {
+.expedition-support-copy h2 {
   margin: 0;
   font-size: clamp(2rem, 4vw, 3.75rem);
   letter-spacing: -0.04em;
 }
 
-.expedition-support-section .button-primary {
-  color: var(--text);
-  background: #ffffff;
-}
-
-.expedition-support-grid {
-  align-items: center;
-  margin-top: 0;
-}
-
-.expedition-support-image {
-  width: 100%;
-  aspect-ratio: 1;
-  object-fit: cover;
-  border-radius: var(--radius);
+.expedition-support-button {
+  margin-top: 1rem;
 }
 
 .expedition-legal {
@@ -526,5 +545,22 @@ code {
 
   .expedition-route-card {
     order: 2;
+  }
+
+  .expedition-support-visual {
+    min-height: 620px;
+    aspect-ratio: 4 / 5;
+  }
+
+  .expedition-support-visual::after {
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.3) 46%, rgba(0, 0, 0, 0) 70%);
+  }
+
+  .expedition-support-copy {
+    top: clamp(1.5rem, 7vw, 2.5rem);
+    right: 1.5rem;
+    left: 1.5rem;
+    width: auto;
+    transform: none;
   }
 }
