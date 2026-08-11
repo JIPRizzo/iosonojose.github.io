@@ -199,13 +199,29 @@
         </div>
         <div class="expedition-follow-grid">
           <article class="card expedition-feature-card">
-            <p class="section-label">Live route</p>
-            <h3>Follow the road</h3>
-            <p>
-              Ride with GPS will show the expedition’s progress once the wheels start
-              turning south.
-            </p>
-            <span class="button button-secondary button-disabled" aria-disabled="true">Route coming soon</span>
+            <p class="section-label">Latest segments</p>
+            <h3>The road so far</h3>
+            <p>Each completed segment appears here after it syncs from DURA.</p>
+            <div class="expedition-rwgps-widget">
+              <a
+                class="rwgps-widget"
+                href="https://ridewithgps.com/users/10063744"
+                data-rwgps-metric="1"
+                data-rwgps-user-id="10063744"
+                data-rwgps-activities-count="5"
+              >Activities for José</a>
+            </div>
+            <script>
+              (function (d, s) {
+                if (!d.getElementById("rwgps-sdk")) {
+                  var el = d.getElementsByTagName(s)[0],
+                      js = d.createElement(s);
+                  js.id = "rwgps-sdk";
+                  js.src = "https://ridewithgps.com/javascripts/sdk.js?1786482961047";
+                  el.parentNode.insertBefore(js, el);
+                }
+              })(document, "script");
+            </script>
           </article>
           <article class="card expedition-feature-card">
             <p class="section-label">Direct signal</p>
