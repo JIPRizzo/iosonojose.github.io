@@ -145,6 +145,34 @@ a {
   color: var(--accent-soft);
 }
 
+.about-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(280px, 0.85fr);
+  gap: clamp(2rem, 5vw, 4.5rem);
+  align-items: start;
+  margin-top: 1.5rem;
+}
+
+.about-copy > :first-child {
+  margin-top: 0;
+}
+
+.about-portrait {
+  margin: 0;
+  width: min(100%, 400px);
+  justify-self: end;
+}
+
+.about-portrait img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  box-shadow: var(--shadow);
+}
+
 .about-forward {
   margin-top: 1.5rem;
 }
@@ -566,7 +594,8 @@ code {
   .expedition-hero-grid,
   .expedition-grid,
   .expedition-follow-grid,
-  .expedition-support-grid {
+  .expedition-support-grid,
+  .about-grid {
     grid-template-columns: 1fr;
   }
 
@@ -586,6 +615,16 @@ code {
 
   .nav-links {
     gap: 0.8rem;
+  }
+
+  .about-portrait {
+    order: -1;
+    width: min(78vw, 360px);
+    justify-self: center;
+  }
+
+  .about-grid {
+    gap: 1.5rem;
   }
 
   .expedition-hero {
