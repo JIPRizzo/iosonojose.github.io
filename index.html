@@ -9,6 +9,17 @@
     name="description"
     content="Storytelling."
     />
+    <link rel="canonical" href="https://joserizzo.com/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="José Rizzo | Storytelling, identity and belonging">
+    <meta property="og:description" content="Follow Hjemmefra → mi hogar, José Rizzo’s bicycle expedition from Copenhagen to Barcelona.">
+    <meta property="og:url" content="https://joserizzo.com/">
+    <meta property="og:image" content="https://joserizzo.com/images/keep-jose-watered.jpg">
+    <meta property="og:image:alt" content="José beside his loaded bicycle, raising a water bottle">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="José Rizzo | Storytelling, identity and belonging">
+    <meta name="twitter:description" content="Follow Hjemmefra → mi hogar from Copenhagen to Barcelona.">
+    <meta name="twitter:image" content="https://joserizzo.com/images/keep-jose-watered.jpg">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
     <link rel="icon" type="image/png" sizes="64x64" href="/favicon-64.png">
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -22,7 +33,8 @@
         <span>José Rizzo</span>
       </a>
 
-      <nav class="nav-links">
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a href="expedition.html">Expedition</a>
         <a href="#video">Video</a>
         <a href="#writing">Writing</a>
         <a href="#about">About</a>
@@ -32,6 +44,14 @@
   </header>
 
   <main id="top">
+    <a class="current-expedition" href="expedition.html" aria-label="Follow Hjemmefra to mi hogar">
+      <span class="container current-expedition-inner">
+        <span class="section-label" id="expedition-countdown">3 days to departure</span>
+        <strong>Hjemmefra → mi hogar</strong>
+        <span class="current-expedition-route">CPH 2 BCN by <span class="route-bike" aria-hidden="true">🚲</span></span>
+      </span>
+    </a>
+
     <section class="hero">
       <div class="container hero-grid">
         <div class="hero-copy">
@@ -83,7 +103,7 @@
           <h2>Cultural Contraband</h2>
         </div>
 
-        <div class="cards">
+        <div class="cards cards-single">
           <article class="card">
             <h3>Read on Substack</h3>
             <p>
@@ -95,16 +115,6 @@
             </a>
           </article>
 
-          <article class="card">
-            <h3>Subscribe</h3>
-            <p>
-              Start with Substack for V1. Keep the system simple before adding
-              separate email capture.
-            </p>
-            <a class="text-link" href="https://substack.com/@joserizzo?utm_source=user-menu" target="_blank" rel="noopener noreferrer">
-              Subscribe on Substack
-            </a>
-          </article>
         </div>
       </div>
     </section>
@@ -170,24 +180,21 @@
       <div class="container">
         <div class="section-head">
           <p class="section-label">Connect</p>
-          <h2>Find me here</h2>
+          <h2>Write to me</h2>
         </div>
 
-        <div class="cards">
+        <div class="cards cards-single">
           <article class="card">
-            <h3>YouTube</h3>
-            <p>Films, short visual stories, and creative experiments.</p>
-            <a class="text-link" href="https://www.youtube.com/@JoseTheReject" target="_blank" rel="noopener noreferrer">
-              Visit channel
+            <p>
+              Have a story or question?<br />
+              Want to collaborate or meet somewhere?<br />
+              Simply want to say hej?
+            </p>
+            <a class="text-link" href="mailto:jose@joserizzo.com">
+              jose@joserizzo.com
             </a>
-          </article>
-
-          <article class="card">
-            <h3>Substack</h3>
-            <p>Longer reflections and essays from Cultural Contraband.</p>
-            <a class="text-link" href="https://culturalcontraband.substack.com/?utm_campaign=profile_chips" target="_blank" rel="noopener noreferrer">
-              Read and subscribe
-            </a>
+            <p class="section-note">
+              Replies may occasionally arrive at a snail’s pace. 🐌            </p>
           </article>
         </div>
       </div>
@@ -208,6 +215,25 @@
   <script>
     /*---Footer Year---*/
     document.getElementById("year").textContent = new Date().getFullYear();
+    /*---Expedition Countdown---*/
+    const countdown = document.getElementById("expedition-countdown");
+    const copenhagenDate = new Intl.DateTimeFormat("en-CA", {
+      timeZone: "Europe/Copenhagen",
+      year: "numeric",
+      month: "2-digit",
+      day: "2-digit"
+    }).format(new Date());
+    const today = new Date(`${copenhagenDate}T00:00:00Z`);
+    const departureDay = new Date("2026-08-15T00:00:00Z");
+    const calendarDaysRemaining = Math.round((departureDay - today) / 86400000);
+
+    if (calendarDaysRemaining > 0) {
+      countdown.textContent = `${calendarDaysRemaining + 1} days until departure, including today`;
+    } else if (calendarDaysRemaining === 0) {
+      countdown.textContent = "Departure day";
+    } else {
+      countdown.textContent = "Now underway";
+    }
     /*---Welcome Typing Animation---*/
     const words = [
   "Welcome",
