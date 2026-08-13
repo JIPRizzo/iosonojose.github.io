@@ -433,6 +433,69 @@ animation: blink 1s infinite;
   font-size: 0.95rem;
 }
 
+.analytics-settings {
+  appearance: none;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+  cursor: pointer;
+}
+
+.analytics-settings:hover,
+.analytics-settings:focus-visible {
+  color: var(--text);
+}
+
+.consent-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: grid;
+  place-items: end center;
+  padding: 1rem;
+  background: rgba(23, 23, 23, 0.42);
+}
+
+.consent-panel {
+  width: min(100%, 680px);
+  padding: 1.5rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--card);
+  box-shadow: 0 18px 60px rgba(0, 0, 0, 0.2);
+}
+
+.consent-panel h2 {
+  margin: 0;
+  font-size: clamp(1.5rem, 4vw, 2.15rem);
+  letter-spacing: -0.03em;
+}
+
+.consent-panel p {
+  margin: 0.75rem 0 0;
+  color: var(--muted);
+}
+
+.consent-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.25rem;
+}
+
+.consent-actions .button {
+  flex: 1 1 180px;
+  justify-content: center;
+}
+
+body.consent-open {
+  overflow: hidden;
+}
+
 code {
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
   font-size: 0.92em;
