@@ -28,16 +28,23 @@
 
   <style>
     .expedition-question-intro { margin-bottom: 0.9rem; }
-    .expedition-origin-head { overflow: hidden; }
-    .expedition-origin-question { text-transform: none; }
+    .expedition-origin-head { overflow: hidden; padding-bottom: 0.18em; }
+    .expedition-origin-question { text-transform: none; line-height: 1.08; padding-bottom: 0.06em; }
     .expedition-origin-question span { display: inline-block; }
-    .origin-where { animation: originFromRight 700ms cubic-bezier(.2,.8,.2,1) both; }
-    .origin-you { animation: originFromTop 760ms 120ms cubic-bezier(.2,.8,.2,1) both, originYouColor 1600ms 850ms ease both; }
-    .origin-from { animation: originFromLeft 720ms 220ms cubic-bezier(.2,.8,.2,1) both; }
-    @keyframes originFromRight { from { opacity: 0; transform: translateX(3rem); } to { opacity: 1; transform: translateX(0); } }
-    @keyframes originFromLeft { from { opacity: 0; transform: translateX(-4rem); } to { opacity: 1; transform: translateX(0); } }
-    @keyframes originFromTop { from { opacity: 0; transform: translateY(-2.5rem); } to { opacity: 1; transform: translateY(0); } }
-    @keyframes originYouColor { 0%,100% { color: inherit; } 30% { color: #ff6b35; } 65% { color: #e84a8a; } }
+    .origin-where { animation: originFromRight 780ms cubic-bezier(.16,.84,.24,1) both; }
+    .origin-you { animation: originFromTop 820ms 320ms cubic-bezier(.16,.84,.24,1) both, originYouColor 3200ms 1200ms ease-in-out both; }
+    .origin-from { animation: originFromLeft 800ms 620ms cubic-bezier(.16,.84,.24,1) both; }
+    @keyframes originFromRight { from { opacity: 0; transform: translateX(65vw); } to { opacity: 1; transform: translateX(0); } }
+    @keyframes originFromLeft { from { opacity: 0; transform: translateX(-65vw); } to { opacity: 1; transform: translateX(0); } }
+    @keyframes originFromTop { from { opacity: 0; transform: translateY(-30vh); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes originYouColor {
+      0%,100% { color: inherit; }
+      18% { color: #ff6b35; }
+      36% { color: #f26a5a; }
+      54% { color: #e84a8a; }
+      72% { color: #f3a93b; }
+      86% { color: #ffd447; }
+    }
     @media (prefers-reduced-motion: reduce) {
       .origin-where, .origin-you, .origin-from { animation: none; }
     }
@@ -342,32 +349,46 @@
             <label class="visually-hidden" for="bd-email">Your email address</label>
             <div class="expedition-signup-fields">
               <input type="email" name="email" id="bd-email" autocomplete="email" placeholder="youremail@goeshere.com" required />
-              <button class="button button-primary" type="submit">Come along</button>
+              <input type="hidden" value="1" name="embed" />
+              <button class="button button-primary" type="submit">Count me in!</button>
             </div>
+            <p class="expedition-consent">Your inbox is sacred. Unsubscribe anytime.</p>
           </form>
         </div>
       </div>
     </section>
 
-    <section id="support" class="section">
+    <section id="support" class="section expedition-support-section">
       <div class="container">
-        <div class="support-card">
-          <img src="images/keep-jose-watered.jpg" alt="José beside his loaded bicycle, raising a water bottle" />
-          <div>
-            <p class="section-label">Keep José watered</p>
-            <h2>Hydration is serious business.</h2>
-            <p>If you’d like to help keep the wheels turning, the bottles filled and the occasional emergency pastry funded, you can throw a little fuel into the expedition.</p>
-            <a class="button button-primary" href="https://buy.stripe.com/8x27sL2Xs1cMfY11uubQY01" target="_blank" rel="noopener noreferrer">Keep José watered 💦</a>
+        <div class="expedition-support-visual">
+          <img
+            src="images/keep-jose-watered.jpg"
+            alt="José kneeling beside his loaded bicycle, smiling and raising a water bottle"
+            class="expedition-support-image"
+          />
+          <div class="expedition-support-copy">
+            <p class="section-label">Support the expedition</p>
+            <h2>Keep José watered 💦</h2>
+            <p>
+              Contributions put a little more water in the bottle and a little more road
+              beneath Angelica’s Pirellis. Stripe lets you choose the amount.
+            </p>
           </div>
         </div>
+        <a class="button button-primary expedition-support-button" href="https://buy.stripe.com/8x27sL2Xs1cMfY11uubQY01" target="_blank" rel="noopener noreferrer">
+          Add water to the bottle
+        </a>
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
     <div class="container footer-inner">
-      <p>© <span id="year"></span> José Rizzo</p>
-      <p>Hjemmefra → mi hogar</p>
+      <div>
+        <p>© <span id="year"></span> José Rizzo</p>
+        <p class="expedition-legal">Hjemmefra → mi hogar is produced by Creative Contraband Productions.</p>
+      </div>
+      <p class="millstreet">Made with kærlighed on Millstreet.</p>
     </div>
   </footer>
 
@@ -375,19 +396,18 @@
     document.getElementById("year").textContent = new Date().getFullYear();
 
     async function loadLatestExpeditionVideo() {
-      const title = document.getElementById("latest-expedition-video-title");
-      const iframe = document.getElementById("latest-expedition-video-iframe");
-      if (!title || !iframe) return;
+      const endpoint = "https://primus.jiprizzo.workers.dev";
+      const titleEl = document.getElementById("latest-expedition-video-title");
+      const iframeEl = document.getElementById("latest-expedition-video-iframe");
 
       try {
-        const response = await fetch("https://primus.jiprizzo.workers.dev");
-        if (!response.ok) throw new Error("Latest video request failed");
-        const data = await response.json();
-        if (!data || !data.embedUrl) throw new Error("No expedition video returned");
-        title.textContent = data.title || "Latest visual dispatch";
-        iframe.src = `${data.embedUrl}?rel=0`;
+        const res = await fetch(endpoint);
+        const data = await res.json();
+        titleEl.textContent = data.title;
+        iframeEl.src = `${data.embedUrl}?rel=0`;
       } catch (error) {
-        title.textContent = "Latest visual dispatch";
+        console.error("Failed to load latest expedition video:", error);
+        titleEl.textContent = "Latest visual dispatch";
       }
     }
 
