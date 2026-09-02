@@ -1,1 +1,456 @@
-PLACEHOLDER
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Hjemmefra → mi hogar | José Rizzo</title>
+  <meta
+    name="description"
+    content="Hjemmefra → mi hogar: José Rizzo cycles from Copenhagen to Barcelona, exploring home, identity and belonging along the way."
+  />
+  <link rel="canonical" href="https://joserizzo.com/expedition.html">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Hjemmefra → mi hogar | José Rizzo">
+  <meta property="og:description" content="A bicycle expedition from Copenhagen to Barcelona exploring home, identity and belonging.">
+  <meta property="og:url" content="https://joserizzo.com/expedition.html">
+  <meta property="og:image" content="https://joserizzo.com/images/keep-jose-watered.jpg">
+  <meta property="og:image:alt" content="José beside his loaded bicycle, raising a water bottle">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Hjemmefra → mi hogar | José Rizzo">
+  <meta name="twitter:description" content="CPH → BCN by bicycle, exploring home, identity and belonging.">
+  <meta name="twitter:image" content="https://joserizzo.com/images/keep-jose-watered.jpg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="64x64" href="/favicon-64.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="stylesheet" href="style.css" />
+  <script src="analytics-consent.js" defer></script>
+
+  <style>
+    #question .container { border-color: var(--accent-soft); }
+    .expedition-pills a { color: inherit; text-decoration: none; }
+    #angelica, #kammer-junker, #lily-and-icarus { scroll-margin-top: 6rem; }
+    .brand-e-accent { position: relative; display: inline-block; }
+    .brand-e-accent::after {
+      content: "´";
+      position: absolute;
+      left: 0.08em;
+      top: -0.16em;
+      color: var(--accent-soft);
+      font-weight: inherit;
+      pointer-events: none;
+    }
+    .expedition-question-intro {
+      margin: 0 0 0.9rem;
+      opacity: 0;
+      animation: originCopyFade 700ms 4.1s ease both;
+    }
+    .expedition-question-body {
+      opacity: 0;
+      animation: originBodyFade 750ms 5s ease both;
+    }
+    .expedition-question-reaction {
+      margin: 1.35rem calc(-1 * clamp(1.5rem, 4vw, 3.25rem));
+      padding: 1rem clamp(1.5rem, 4vw, 3.25rem);
+      background: #fff;
+      color: var(--text) !important;
+    }
+    .expedition-origin-head { overflow: hidden; padding-bottom: 0.18em; }
+    .expedition-origin-question { text-transform: none; line-height: 1.08; padding-bottom: 0.06em; }
+    .expedition-origin-question span { display: inline-block; }
+    .origin-where { animation: originFromRight 780ms cubic-bezier(.16,.84,.24,1) both; }
+    .origin-you { animation: originFromTop 820ms 320ms cubic-bezier(.16,.84,.24,1) both, originYouColor 1600ms 1200ms ease-in-out both; }
+    .origin-from { animation: originFromLeft 800ms 2.95s cubic-bezier(.16,.84,.24,1) both; }
+    @keyframes originFromRight { from { opacity: 0; transform: translateX(65vw); } to { opacity: 1; transform: translateX(0); } }
+    @keyframes originFromLeft { from { opacity: 0; transform: translateX(-65vw); } to { opacity: 1; transform: translateX(0); } }
+    @keyframes originFromTop { from { opacity: 0; transform: translateY(-30vh); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes originYouColor {
+      0%,100% { color: inherit; }
+      18% { color: #ff6b35; }
+      36% { color: #f26a5a; }
+      54% { color: #e84a8a; }
+      72% { color: #f3a93b; }
+      86% { color: #ffd447; }
+    }
+    @keyframes originCopyFade { from { opacity: 0; transform: translateY(0.35rem); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes originBodyFade { from { opacity: 0; } to { opacity: 1; } }
+    @media (prefers-reduced-motion: reduce) {
+      .origin-where, .origin-you, .origin-from, .expedition-question-intro, .expedition-question-body {
+        animation: none;
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a href="index.html" class="brand">
+        <img src="images/jr-mark.png" alt="JR mark" class="brand-mark" />
+        <span>Jos<span class="brand-e-accent">e</span> Rizzo</span>
+      </a>
+
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a href="expedition.html" aria-current="page">Expedition</a>
+        <a href="index.html#video">Video</a>
+        <a href="index.html#writing">Writing</a>
+        <a href="index.html#about">About</a>
+        <a href="index.html#connect">Connect</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section id="question" class="section expedition-dark">
+      <div class="container narrow">
+        <p class="expedition-question-intro">We’ve all heard it before and likely used it at some point.</p>
+        <div class="section-head expedition-origin-head">
+          <h1 class="page-title expedition-origin-question" aria-label="where are you from?">
+            <span class="origin-where">where are</span> <span class="origin-you">you</span> <span class="origin-from">from?...</span>
+          </h1>
+        </div>
+        <div class="expedition-question-body">
+          <p class="expedition-question-reaction">That question has caused me dread, distress, delight, shame, confusion. It still can.</p>
+          <p>I’ve learned to answer calmly. Over the years, I’ve experimented with all types of answers: funny ones, short ones, long ones, no answers, new answers.</p>
+          <p>I don’t take myself too seriously anymore. The contradictions and I get along much better now. 😏</p>
+          <p>What has always fascinated me is how such a simple question can stir up so much.</p>
+          <p>Whether you’re a multiculturite, have parents from different backgrounds, are a third-culture kid, or simply don’t feel you belong in the place where you were born, sometimes a one- or two-word answer just feels like shortchange.</p>
+          <p>Maybe that’s a José problem. I don’t know.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="expedition-hero">
+      <div class="container expedition-hero-grid">
+        <div>
+          <p class="section-label">A moving investigation</p>
+          <h2 class="expedition-title">Hjemmefra <span class="expedition-arrow" aria-hidden="true">→</span> mi hogar</h2>
+          <p class="expedition-lead">
+            I’m traversing Europe, questioning identity, belonging and this thing called home.
+            Again... but this time on a bike. 😅
+          </p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#support">Keep José watered 💦</a>
+            <a class="button button-secondary" href="mailto:jose@joserizzo.com?subject=Hjemmefra%20%E2%86%92%20mi%20hogar">Say hola 👋🏼</a>
+          </div>
+        </div>
+
+        <aside class="expedition-route-card" aria-label="Expedition route and equipment">
+          <p class="section-label">The route</p>
+          <p class="expedition-route">CPH <span class="expedition-arrow" aria-hidden="true">→</span> BCN</p>
+          <p class="expedition-route-note">
+            The path reveals itself one pedal stroke at a time. There are a few checkpoints, but the actual route is decided daily, depending on wind, water and where my curiosity takes me.
+          </p>
+          <p class="expedition-route-note">
+            <strong>Moving motto</strong><br>
+            <span lang="la"><em>Aut inveniam viam aut faciam.</em></span><br>
+            Find a way or make one.
+          </p>
+          <div class="expedition-pills" aria-label="Expedition essentials">
+            <span><a href="#angelica">Angelica</a></span>
+            <span><a href="#kammer-junker">Home</a></span>
+            <span><a href="#lily-and-icarus">Camera(s)</a></span>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="road" class="section section-alt">
+      <div class="container">
+        <div class="section-head">
+          <p class="section-label">Follow the journey</p>
+          <h2>Watch it. Read it.</h2>
+        </div>
+        <div class="cards">
+          <article class="card">
+            <p class="section-label">Watch</p>
+            <h3 id="latest-expedition-video-title">Latest visual dispatch</h3>
+            <div class="video-frame">
+              <iframe
+                id="latest-expedition-video-iframe"
+                src=""
+                title="Latest expedition video"
+                frameborder="0"
+                allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen
+              ></iframe>
+            </div>
+            <a class="text-link" href="https://www.youtube.com/playlist?list=PLJ0_ZP06xQl4" target="_blank" rel="noopener noreferrer">
+              Watch the visual journey on YouTube
+            </a>
+          </article>
+          <article class="card">
+            <p class="section-label">Read</p>
+            <h3>Field Note 006 🇳🇱 Hallo Nederland.</h3>
+            <p>
+              Contradictions or…? Deutschland: wet, headwinds… enjoyable. Nederlands: sunny, tailwinds… enjoyable.
+            </p>
+            <a class="text-link" href="https://culturalcontraband.substack.com/s/hjemmefra-mi-hogar" target="_blank" rel="noopener noreferrer">
+              Read the Field Notes on Substack
+            </a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="why" class="section expedition-dark">
+      <div class="container narrow">
+        <div class="section-head">
+          <h2>The <em>(unfinished)</em> why</h2>
+        </div>
+        <p>
+          Sí, completely unnecessary. I know. Pity me. I suffer from FOMO and have convinced myself this might be a worthwhile opportunity to practise this whole filmmaker-documentarist thingy in public. Besides, I’m too young and too poor to buy a sports car to soothe my midlife crisis. Luckily, my wife Sofie and our son Valentino fully support this self-inflicted mission.
+        </p>
+        <p>
+          Life is a struggle. Particularly when you’re split between places. That split has been my burden. Yet being a multiculturite is also a blessing, and perhaps my unfair advantage.
+        </p>
+        <p>
+          Okay, José. Whoop-t-doo. Good for you. 😮‍💨
+        </p>
+        <p>
+          Truth is, I don’t know.
+        </p>
+        <p>
+          Maybe because I can, at least technically, and I don’t take that for granted.
+        </p>
+        <p>
+          Maybe because this journey is a mini-version of what I’m trying to do with my life: earn a living as a storyteller while navigating the AI revolution.
+        </p>
+        <p>
+          Maybe because the bumpy road to fatherhood taught me just how scarce time really is.
+        </p>
+        <p>
+          The seed was planted around my 30th birthday. Bjarke, my Danish teacher, gave me a book documenting a Dutchman’s journey from Amsterdam to Singapore.
+        </p>
+        <p>
+          As the wrapping fell away, the title stopped me. Amsterdam to Singapore... on a bicycle? Wait, what? 😳
+        </p>
+        <p>
+          Then came the jolt of wonder. Something I hadn’t felt for the longest time.
+        </p>
+        <p>
+          By the time I finished it, I couldn’t stop wondering whether I could do something like that.
+        </p>
+        <p>
+          That was almost a decade ago. Today, I’m finally finding out.
+        </p>
+        <p>
+          In the months leading up to this, I’ve been collecting reasons. Reasons for leaving. But what’s the point in polishing them now? I’m more interested in noticing how the why changes as I make my way south.
+        </p>
+        <p>
+          Maybe, deep down, I simply want to know whether I can. Maybe this is an escape valve from my neat life in the Nordics. Maybe I won’t make it all the way. The uncertainty is certainly part of the appeal.
+        </p>
+      </div>
+    </section>
+
+    <section id="what" class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2>A moving inquiry</h2>
+        </div>
+        <div class="expedition-grid">
+          <article class="card">
+            <h3>Europa</h3>
+            <p>
+              I’m travelling from Copenhagen to Barcelona under my own leg power. Most of my life, travel has been ticket, machine, new place. New machine this time, except I’m doing the work and moving slowly. I’m keen to experience the places between the coordinates on a map.
+            </p>
+          </article>
+          <article class="card">
+            <h3>Strangers</h3>
+            <p>
+              I’ll converse with people I know who have made a life elsewhere. Strangers I meet on the road. Anyone willing to share their story and tell me what belonging means to them.
+            </p>
+          </article>
+          <article class="card">
+            <h3>Broadcast</h3>
+            <p>
+              Films, field notes, field recordings and unfinished ideas will emerge while I’m moving. They’re my attempt to catch what I sense before hindsight tidies it up. The expedition is the documentary’s raw draft, shared in real time.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="belonging" class="section expedition-dark">
+      <div class="container narrow">
+        <div class="section-head">
+          <h2>What if the better question is...</h2>
+        </div>
+        <div class="expedition-question" aria-label="Where do you belong?">
+          <p class="expedition-typewriter" aria-hidden="true">Where do <span class="reader-you">you</span> belong?</p>
+        </div>
+        <div class="expedition-question-cloud" aria-label="Questions about what home can be">
+          <p>Can home be multiple countries?</p>
+          <p>A place?</p>
+          <p>A language... or maybe a mixture of many?</p>
+          <p>A person?</p>
+          <p>A people?</p>
+          <p>A memory?</p>
+          <p>Something we carry and continually modify?</p>
+        </div>
+        <p>
+          The question no longer unsettles me in the same way, and I’m not looking for definitive answers. I’m collecting parallels between people who left, people who stayed, the places that shaped us and the places we chose.
+        </p>
+      </div>
+    </section>
+
+    <section id="how" class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2>Simple tools. Complicated questions.</h2>
+        </div>
+        <div class="expedition-grid expedition-grid-three">
+          <article class="card" id="angelica">
+            <p class="expedition-card-icon" aria-hidden="true">🚲</p>
+            <h3>Angelica</h3>
+            <p>Two circles. Eleven gears. A simple machine. My angel, accomplice and means of moving slowly enough to pay attention.</p>
+            <p><strong>How does moving by bike change what you perceive in people, the land and yourself?</strong></p>
+          </article>
+          <article class="card" id="kammer-junker">
+            <p class="expedition-card-icon" aria-hidden="true">⛺</p>
+            <h3>Kammer Junker</h3>
+            <p>Kammer Junker’s thin fabric and mesh walls become my proverbial snail shell, a practical experiment in how shelter transforms into home.</p>
+            <p><strong>How do you develop roots while in motion?</strong></p>
+          </article>
+          <article class="card" id="lily-and-icarus">
+            <p class="expedition-card-icon" aria-hidden="true">📱</p>
+            <h3>Lily and Icarus</h3>
+            <p>Lily and Icarus are my cameras, notebook and connection to the people following along.</p>
+            <p><strong>Can creating with the tools already in our pocket change our sense of what we’re capable of?</strong></p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="follow" class="section section-alt">
+      <div class="container">
+        <div class="section-head">
+          <h2>Where is José today?</h2>
+        </div>
+        <div class="expedition-follow-grid">
+          <article class="card expedition-feature-card">
+            <p class="section-label">Latest segments</p>
+            <h3>The road so far</h3>
+            <p>Each completed segment appears here after it syncs from DURA.</p>
+            <div class="expedition-rwgps-widget">
+              <a
+                class="rwgps-widget"
+                href="https://ridewithgps.com/users/10063744"
+                data-rwgps-metric="1"
+                data-rwgps-user-id="10063744"
+                data-rwgps-activities-count="3"
+              >Activities for José</a>
+            </div>
+            <script>
+              (function (d, s) {
+                if (!d.getElementById("rwgps-sdk")) {
+                  var el = d.getElementsByTagName(s)[0],
+                      js = d.createElement(s);
+                  js.id = "rwgps-sdk";
+                  js.src = "https://ridewithgps.com/javascripts/sdk.js?1786482961047";
+                  el.parentNode.insertBefore(js, el);
+                }
+              })(document, "script");
+            </script>
+          </article>
+          <article class="card expedition-feature-card">
+            <p class="section-label">Direct signal</p>
+            <h3>Say hej 👋🏼</h3>
+            <p>
+              Know someone along the route?<br />
+              Want to share a story about home or belonging?<br />
+              Maybe you simply want to cheer me on?
+            </p>
+            <p>
+              Replies may arrive at a snail’s pace, but I read and respond to every message. 🐌
+            </p>
+            <a class="button button-secondary" href="mailto:jose@joserizzo.com?subject=Hjemmefra%20%E2%86%92%20mi%20hogar">
+              Email José
+            </a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="dispatches" class="section expedition-dispatches">
+      <div class="container narrow">
+        <div class="expedition-dispatches-card">
+          <div>
+            <p class="section-label">Come along</p>
+            <h2>Let’s see where this goes.</h2>
+            <p>Occasional notes from the road, invitations to shape the documentary and first notice of screenings.</p>
+          </div>
+          <form
+            action="https://buttondown.com/api/emails/embed-subscribe/joserizzo"
+            method="post"
+            class="expedition-signup-form"
+          >
+            <label class="visually-hidden" for="bd-email">Your email address</label>
+            <div class="expedition-signup-fields">
+              <input type="email" name="email" id="bd-email" autocomplete="email" placeholder="youremail@goeshere.com" required />
+              <input type="hidden" value="1" name="embed" />
+              <button class="button button-primary" type="submit">Count me in!</button>
+            </div>
+            <p class="expedition-consent">Your inbox is sacred. Unsubscribe anytime.</p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section id="support" class="section expedition-support-section">
+      <div class="container">
+        <div class="expedition-support-visual">
+          <img
+            src="images/keep-jose-watered.jpg"
+            alt="José kneeling beside his loaded bicycle, smiling and raising a water bottle"
+            class="expedition-support-image"
+          />
+          <div class="expedition-support-copy">
+            <p class="section-label">Support the expedition</p>
+            <h2>Keep José watered 💦</h2>
+            <p>
+              Contributions put a little more water in the bottle and a little more road
+              beneath Angelica’s Pirellis. Stripe lets you choose the amount.
+            </p>
+          </div>
+        </div>
+        <a class="button button-primary expedition-support-button" href="https://buy.stripe.com/8x27sL2Xs1cMfY11uubQY01" target="_blank" rel="noopener noreferrer">
+          Add water to the bottle
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        <p>© <span id="year"></span> José Rizzo</p>
+        <p class="expedition-legal">Hjemmefra → mi hogar is produced by Creative Contraband Productions.</p>
+      </div>
+      <p class="millstreet">Made with kærlighed on Millstreet.</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    async function loadLatestExpeditionVideo() {
+      const endpoint = "https://primus.jiprizzo.workers.dev";
+      const titleEl = document.getElementById("latest-expedition-video-title");
+      const iframeEl = document.getElementById("latest-expedition-video-iframe");
+
+      try {
+        const res = await fetch(endpoint);
+        const data = await res.json();
+        titleEl.textContent = data.title;
+        iframeEl.src = `${data.embedUrl}?rel=0`;
+      } catch (error) {
+        console.error("Failed to load latest expedition video:", error);
+        titleEl.textContent = "Latest visual dispatch";
+      }
+    }
+
+    loadLatestExpeditionVideo();
+  </script>
+</body>
+</html>
