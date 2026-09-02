@@ -27,13 +27,14 @@
   <script src="analytics-consent.js" defer></script>
 
   <style>
-    .expedition-question-intro { margin-bottom: 0.9rem; }
+    .expedition-question-intro { margin: 0.9rem 0 1.15rem; opacity: 0; animation: originCopyFade 700ms 5.85s ease both; }
+    .expedition-question-reaction { opacity: 0; animation: originCopyFade 700ms 6.7s ease both; }
     .expedition-origin-head { overflow: hidden; padding-bottom: 0.18em; }
     .expedition-origin-question { text-transform: none; line-height: 1.08; padding-bottom: 0.06em; }
     .expedition-origin-question span { display: inline-block; }
     .origin-where { animation: originFromRight 780ms cubic-bezier(.16,.84,.24,1) both; }
     .origin-you { animation: originFromTop 820ms 320ms cubic-bezier(.16,.84,.24,1) both, originYouColor 3200ms 1200ms ease-in-out both; }
-    .origin-from { animation: originFromLeft 800ms 620ms cubic-bezier(.16,.84,.24,1) both; }
+    .origin-from { animation: originFromLeft 800ms 4.55s cubic-bezier(.16,.84,.24,1) both; }
     @keyframes originFromRight { from { opacity: 0; transform: translateX(65vw); } to { opacity: 1; transform: translateX(0); } }
     @keyframes originFromLeft { from { opacity: 0; transform: translateX(-65vw); } to { opacity: 1; transform: translateX(0); } }
     @keyframes originFromTop { from { opacity: 0; transform: translateY(-30vh); } to { opacity: 1; transform: translateY(0); } }
@@ -45,8 +46,9 @@
       72% { color: #f3a93b; }
       86% { color: #ffd447; }
     }
+    @keyframes originCopyFade { from { opacity: 0; transform: translateY(0.35rem); } to { opacity: 1; transform: translateY(0); } }
     @media (prefers-reduced-motion: reduce) {
-      .origin-where, .origin-you, .origin-from { animation: none; }
+      .origin-where, .origin-you, .origin-from, .expedition-question-intro, .expedition-question-reaction { animation: none; opacity: 1; }
     }
   </style>
 </head>
@@ -71,13 +73,13 @@
   <main>
     <section id="question" class="section expedition-dark">
       <div class="container narrow">
-        <p class="expedition-question-intro">We’ve all heard it before, probably used it at some point...</p>
         <div class="section-head expedition-origin-head">
           <h1 class="page-title expedition-origin-question" aria-label="where are you from?">
-            <span class="origin-where">where are</span> <span class="origin-you">you</span> <span class="origin-from">from?</span><span aria-hidden="true">...</span>
+            <span class="origin-where">where are</span> <span class="origin-you">you</span> <span class="origin-from">from?...</span>
           </h1>
         </div>
-        <p>It used to cause me dread, distress, delight, shame, confusion.</p>
+        <p class="expedition-question-intro">We’ve all heard it before and likely used it at some point.</p>
+        <p class="expedition-question-reaction">It’s caused me dread, distress, delight, shame, confusion.</p>
         <p>I could (and still can) answer calmly. Over the years, I’ve experimented with and developed funny answers: short answers, long answers, no answers, new answers.</p>
         <p>I don’t take myself too seriously anymore.</p>
         <p>That’s the power of learning how to move with contradictions. Contradictions and I get along much better now. 😏</p>
