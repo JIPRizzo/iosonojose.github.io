@@ -99,10 +99,10 @@
     panel.className = "consent-backdrop";
     panel.innerHTML = `
       <section class="consent-panel" role="dialog" aria-modal="true" aria-labelledby="consent-title" aria-describedby="consent-description">
-        <h2 id="consent-title">A little signal?</h2>
-        <p id="consent-description">I use Google Analytics to understand how people find and use this website. Analytics only loads if you choose to allow it.</p>
+        <h2 id="consent-title">Full disclosure?</h2>
+        <p id="consent-description">Google Analytics helps me understand how people find and use this website. Analytics only work with your help.</p>
         <div class="consent-actions">
-          <button class="button button-primary" type="button" data-consent="granted">Accept analytics</button>
+          <button class="button button-primary" type="button" data-consent="granted">Sure, happy to help</button>
           <button class="button button-secondary" type="button" data-consent="denied">No thanks</button>
         </div>
       </section>`;
