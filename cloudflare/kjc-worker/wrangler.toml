@@ -1,0 +1,10 @@
+name = "kjc-field-station"
+main = "src/index.js"
+compatibility_date = "2026-09-03"
+
+[[r2_buckets]]
+binding = "KJC_BUCKET"
+bucket_name = "kjc-transmission"
+
+# Add the upload passphrase at deployment time; never commit it:
+#   npx wrangler secret put ADMIN_TOKEN

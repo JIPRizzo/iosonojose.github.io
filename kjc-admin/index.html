@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>KJC Field Station</title>
+  <link rel="stylesheet" href="../style.css">
+  <style>
+    :root { --field-green: #8f9970; --field-dark: #242a27; --field-paper: #f6f3ee; }
+    body { min-height: 100vh; background: var(--field-dark); color: var(--field-paper); }
+    .station { width: min(calc(100% - 2rem), 36rem); margin: 0 auto; padding: 3rem 0 5rem; }
+    .station-label { margin: 0 0 .75rem; color: rgba(246,243,238,.7); font-size: .75rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; }
+    h1 { margin: 0 0 .6rem; color: var(--field-paper); font-size: clamp(2.2rem, 9vw, 4rem); line-height: .98; letter-spacing: -.045em; }
+    .station-intro { margin: 0 0 2rem; color: rgba(246,243,238,.76); }
+    .upload-form { display: grid; gap: 1rem; padding: 1.25rem; color: #171717; background: var(--field-paper); border: .5rem solid var(--field-green); border-radius: 1rem; }
+    .field { display: grid; gap: .38rem; }
+    label { font-size: .82rem; font-weight: 700; letter-spacing: .04em; }
+    input, textarea { width: 100%; box-sizing: border-box; padding: .85rem .9rem; color: #171717; background: white; border: 1px solid rgba(23,23,23,.25); border-radius: .55rem; font: inherit; }
+    input[type="file"] { padding: .7rem; }
+    textarea { min-height: 5.5rem; resize: vertical; }
+    .metadata-grid { display: grid; grid-template-columns: .65fr 1.35fr; gap: .8rem; }
+    .upload-button { width: 100%; padding: .95rem 1rem; border: 0; border-radius: 999px; background: var(--field-dark); color: white; font: inherit; font-weight: 700; cursor: pointer; }
+    .upload-button:disabled { cursor: wait; opacity: .55; }
+    progress { width: 100%; height: .8rem; accent-color: var(--field-green); }
+    .status { min-height: 1.5rem; margin: 0; font-size: .9rem; }
+    .status[data-kind="error"] { color: #a32222; }
+    .status[data-kind="success"] { color: #32613a; font-weight: 700; }
+    .technical-note { margin: .25rem 0 0; color: #5c5c5c; font-size: .78rem; }
+    @media (max-width: 520px) { .metadata-grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <main class="station">
+    <p class="station-label">Direct from inside</p>
+    <h1>KJC Field Station</h1>
+    <p class="station-intro">Choose the transmission, identify it, send it.</p>
+
+    <form class="upload-form" id="upload-form" data-api="https://kjc-field-station.jiprizzo.workers.dev">
+      <div class="field">
+        <label for="token">Publishing passphrase</label>
+        <input id="token" name="token" type="password" autocomplete="current-password" required>
+      </div>
+
+      <div class="field">
+        <label for="video">Video</label>
+        <input id="video" name="video" type="file" accept="video/mp4,video/quicktime,.mp4,.mov" required>
+        <p class="technical-note">V0 accepts MP4 or MOV files up to 600 MB.</p>
+      </div>
+
+      <div class="metadata-grid">
+        <div class="field">
+          <label for="number">Transmission</label>
+          <input id="number" name="number" type="number" min="1" max="999" value="1" required>
+        </div>
+        <div class="field">
+          <label for="location">Location</label>
+          <input id="location" name="location" type="text" maxlength="100" placeholder="Amsterdam" required>
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="date">Date</label>
+        <input id="date" name="date" type="date" required>
+      </div>
+
+      <div class="field">
+        <label for="note">One short line <span aria-hidden="true">(optional)</span></label>
+        <textarea id="note" name="note" maxlength="280"></textarea>
+      </div>
+
+      <button class="upload-button" id="upload-button" type="submit">Publish transmission</button>
+      <progress id="progress" max="100" value="0" hidden>0%</progress>
+      <p class="status" id="status" role="status" aria-live="polite"></p>
+    </form>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
