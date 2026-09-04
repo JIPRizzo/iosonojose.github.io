@@ -82,7 +82,7 @@
 }
 
 .kjc-outside .kjc-threshold {
-  --kjc-peak: clamp(2.75rem, 6vw, 4.5rem);
+  --kjc-peak: clamp(0.9rem, 2vw, 1.35rem);
   width: min(100%, 850px);
   margin: 0 auto;
   padding: 0.65rem;
@@ -150,7 +150,7 @@
   }
 
   .kjc-outside .kjc-threshold {
-    --kjc-peak: 3rem;
+    --kjc-peak: 1rem;
     padding: 0.45rem;
     border-radius: 0 0 calc(var(--radius) - 2px) calc(var(--radius) - 2px);
   }
