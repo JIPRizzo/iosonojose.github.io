@@ -30,6 +30,22 @@
         .hero-confusion-subline { font-size: 6.55vw !important; white-space: nowrap; }
         .hero-confusion-emoji { font-size: .72em !important; vertical-align: .08em; }
       }
+      #expedition-countdown.ripple-underway { display:inline-flex; white-space:pre; }
+      #expedition-countdown.ripple-underway .ripple-letter {
+        display:inline-block;
+        transform-origin:50% 70%;
+        animation:underway-ripple 6s cubic-bezier(.22,.61,.36,1) infinite;
+        animation-delay:calc(var(--i) * 55ms);
+      }
+      @keyframes underway-ripple {
+        0%,7%,100% { transform:translateY(0) scale(1); }
+        2.2% { transform:translateY(-2.8px) scale(1.045,1.06); }
+        4.2% { transform:translateY(.7px) scale(.995,.99); }
+        5.5% { transform:translateY(0) scale(1); }
+      }
+      @media (prefers-reduced-motion:reduce) {
+        #expedition-countdown.ripple-underway .ripple-letter { animation:none; }
+      }
     </style>
 </head>
 <body>
@@ -242,7 +258,10 @@
     } else if (calendarDaysRemaining === 0) {
       countdown.textContent = "Departure day";
     } else {
-      countdown.textContent = "Now underway";
+      const underway = "NOW UNDERWAY";
+      countdown.classList.add("ripple-underway");
+      countdown.setAttribute("aria-label", "Now underway");
+      countdown.innerHTML = [...underway].map((char, i) => char === " " ? " " : `<span class="ripple-letter" aria-hidden="true" style="--i:${i}">${char}</span>`).join("");
     }
     /*---Welcome Typing Animation---*/
     const words = [
